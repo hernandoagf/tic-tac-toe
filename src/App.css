@@ -12,8 +12,133 @@ body {
 	background: radial-gradient(
 		circle,
 		rgba(0, 41, 82, 1) 0%,
-		rgba(3, 0, 41, 1) 100%
+		rgba(3, 0, 41, 1) 58%
 	);
 	font-family: 'Roboto', sans-serif;
-	color: white;
+	font-size: 26px;
+	color: #dddddd;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.App {
+	width: 500px;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.heading {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border: 2px solid #999999;
+	border-radius: 10px;
+	margin: 30px 20px;
+	padding: 10px 15px;
+}
+
+.title {
+	font-size: 1.7em;
+	text-transform: uppercase;
+}
+
+.score {
+	background-color: whitesmoke;
+	color: #333333;
+	text-transform: uppercase;
+	text-align: center;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+.score * + * {
+	margin-top: 5px;
+	font-weight: bold;
+}
+
+.game {
+	width: 100%;
+	height: 100%;
+	margin-bottom: 30px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	gap: 1em;
+}
+
+.game div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	position: relative;
+	font-size: 70px;
+}
+
+.game div:nth-of-type(5)::before {
+	content: '';
+	position: absolute;
+	cursor: auto;
+	left: -1rem;
+	width: 1rem;
+	height: calc(300% + 2.5rem);
+	border-radius: 50px;
+	background-color: #101010;
+}
+
+.game div:nth-of-type(5)::after {
+	content: '';
+	position: absolute;
+	cursor: auto;
+	right: -1rem;
+	width: 1rem;
+	height: calc(300% + 2.5rem);
+	border-radius: 50px;
+	background-color: #101010;
+}
+
+.game div:nth-of-type(2)::after {
+	content: '';
+	position: absolute;
+	cursor: auto;
+	bottom: -1rem;
+	width: calc(300% + 2.5rem);
+	height: 1rem;
+	border-radius: 50px;
+	background-color: #101010;
+}
+
+.game div:nth-of-type(8)::after {
+	content: '';
+	position: absolute;
+	cursor: auto;
+	top: -1rem;
+	width: calc(300% + 2.5rem);
+	height: 1rem;
+	border-radius: 50px;
+	background-color: #101010;
+}
+
+.btn {
+	color: #dddddd;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: bold;
+	padding: 10px;
+	background-color: #9d03c4;
+	border-radius: 10px;
+	margin-bottom: 200px;
+	transform: scale(0.9);
+	transition: background-color 0.2s linear;
+	transition: transform 0.2s linear;
+}
+
+.btn:hover {
+	background-color: #8e01b1;
+	transform: scale(1);
 }
